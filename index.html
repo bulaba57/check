@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Win Amazing Rewards</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/389200ff98.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Home Section -->
+    <div id="home">
+      <h1 class="main-title">Win Amazing Rewards! 🎉</h1>
+      <p class="motivational-text">
+        Join thousands of people earning money through simple tasks on Telegram!
+        💸
+        <br />Your journey to financial freedom starts here. <br /><strong
+          >Enter your phone number now and claim your reward instantly!</strong
+        >
+      </p>
+      <div class="reward-form">
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Enter your phone number"
+          required
+        />
+        <button id="get-reward" class="btn">Try My Reward</button>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+      const phoneInput = document.getElementById("phone");
+      const getRewardButton = document.getElementById("get-reward");
+
+      getRewardButton.addEventListener("click", () => {
+        if (phoneInput.value.trim() !== "") {
+          window.location.href = "reward.html";
+        } else {
+          alert("Please enter your phone number to proceed!");
+        }
+      });
+    </script>
+  </body>
+</html>

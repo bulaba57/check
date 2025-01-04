@@ -1,0 +1,104 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Home Section */
+#home {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.main-title {
+  font-size: 36px;
+  color: #ff004f;
+  margin-bottom: 20px;
+  animation: slideDown 1s ease-in-out;
+}
+
+.motivational-text {
+  font-size: 15px;
+  color: #ababab;
+  margin-bottom: 30px;
+  animation: fadeInText 2s ease-in-out;
+}
+
+.reward-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reward-form input {
+  width: 80%;
+  max-width: 400px;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.reward-form input::placeholder {
+  color: #999;
+}
+
+.reward-form button {
+  padding: 14px 60px;
+  font-size: 18px;
+  background: #ff004f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.reward-form button:hover {
+  background: #e60045;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
